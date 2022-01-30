@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <!-- <script src="https://unpkg.com/imask"></script> -->
+    <title>Card editor</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-main card-front">
+                <div class="card-front-container">
+                    <img class="card-chip" src="chip.svg" alt="">
+                    <img class="visaLogo" src="VisaLogo.svg" alt="">
+                    <p class="card-num">⚹⚹⚹⚹ ⚹⚹⚹⚹ ⚹⚹⚹⚹ ⚹⚹⚹⚹</p>
+                    <div class="card-holder-data">
+                        <p class="mini-labels">Card Holder name</p>
+                        <p class="card-holder">Firstname Lastname</p>
+                    </div>
+                    <div class="card-exp-date">
+                        <p class="mini-labels">Expiry Date</p>
+                        <p class="date"><span class="exp-date-month"></span> / <span class="exp-date-year"></span></p>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="card-main card-back">
+                <div class="card-back-container">
+                    <div class="magnet-line"></div>
+                    <div class="cvv-num">
+                        <p class="cvv">⚹⚹⚹</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inputs-main">
+            <div class="inputs-container">
+                <label for="cardNumber">Card number</label>
+                <!-- for input w/o stars -->
+                <!-- <input type="text" name="cardNumber" id="cardNumber" maxlength="19" required> -->
+                <input type="text" name="cardNumber" id="cardNumber" maxlength = "20" required>
+                <label for="cardHolder">Card holder</label>
+                <input type="text" name="cardHolder" id="cardHolder" maxlength = "23" required>
+                <div class="middle-input-container">
+                    <div class="expDate-container">
+                        <label for="expDate">Expiry date</label>
+                        <select name="expDate" id="expDate">
+                            <option value="1">1 year</option>
+                            <option value="2" selected>2 years</option>
+                            <option value="3">3 years</option>
+                            <option value="5">5 years</option>
+                        </select>
+                    </div>
+                    <div class="cvv-container">
+                        <label for="cvv">CVV</label>
+                        <input type="text" name="cvv" id="cvv" maxlength="3" required>
+                    </div>
+                </div>
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.card').onclick = () => {
+                if(+document.querySelector('.card-back').style.zIndex) {
+                    document.querySelector('.card').style = "transform: rotateY(0deg);"
+                    setTimeout(() => (document.querySelector('.card-back').style = "z-index: 0"), 150)
+
+                }    
+                    
+                else {
+                    document.querySelector('.card').style = "transform: rotateY(180deg);"
+                    setTimeout(() => (document.querySelector('.card-back').style = "z-index: 1"), 150) 
+                }
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.inputs-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-container {
+    position: relative;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* #cardNumber::-webkit-outer-spin-button,
+#cardNumber::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#cardNumber[type=number] {
+    -moz-appearance: textfield;
+} */
+
+input {
+    padding: 0px 2px;
+    height: 30px;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+}
+
+select {
+    height: 30px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1.1em;
+    font-weight: bold;
+    user-select: none;
+    color: rgb(43, 43, 43);
+}
+
+#expDate {
+    width: 102px;
+}
+
+#cvv {
+    width: 102px;
+}
+
+.submit {
+    width: 150px;
+    font-size: 1.1em;
+}
+
+.middle-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.expDate-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cvv-container {
+    display: flex;
+    flex-direction: column;
+}
+
